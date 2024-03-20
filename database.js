@@ -19,7 +19,7 @@ export async function getSubmissions() {
     return JSON.stringify(submissions || error, null, 2)
 }
 
-console.log(await getSubmissions());
+
 /* SUPABASE INSERT ROW */
 export async function createSubmissions(username, language, stdin, sourceCode) {
     /* SUPABASE CODE */

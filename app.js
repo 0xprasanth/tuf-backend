@@ -56,5 +56,5 @@ app.use((err, req, res, next) => {
 const port = process.env.PORT || 8081
 
 app.listen(port, () => {
-  console.log("Server running on port 8081");
+  console.log("Server running on port " + port);
 });
