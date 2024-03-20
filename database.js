@@ -10,14 +10,16 @@ const supabase = createClient(
   process.env.SUPABASE_KEY
 );
 
+
 /* SUPABASE FETCH DATA */
 export async function getSubmissions() {
   const { data: submissions, error } = await supabase
     .from("submissions")
     .select("*");
-    return JSON.stringify(submissions, null, 2)
+    return JSON.stringify(submissions || error, null, 2)
 }
 
+console.log(await getSubmissions());
 /* SUPABASE INSERT ROW */
 export async function createSubmissions(username, language, stdin, sourceCode) {
     /* SUPABASE CODE */
@@ -96,8 +98,8 @@ export async function getSubmissionById(id){
 // //   return getUser(newId);
 // }
 
-const users = await createSubmissions('db.js', 'python', '', 'print("I am prasanth")');
-console.log(users);
+// const users = await createSubmissions('db.js', 'python', '', 'print("I am prasanth")');
+// console.log(users);
 // const users = await createUser('ptech12', 'python', '', 'print("I am prasanth")');
 // console.log(users);
 // const submit = await getSubmissions();
