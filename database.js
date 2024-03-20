@@ -25,6 +25,8 @@ export async function createSubmissions(username, language, stdin, sourceCode) {
     .from("submissions")
     .insert([{ username: username, lang: language, stdin: stdin, src_code: sourceCode }])
     .select();
+  // console.log(await getSubmissions());
+  return submissions
 }
 
 
@@ -94,6 +96,8 @@ export async function getSubmissionById(id){
 // //   return getUser(newId);
 // }
 
+const users = await createSubmissions('db.js', 'python', '', 'print("I am prasanth")');
+console.log(users);
 // const users = await createUser('ptech12', 'python', '', 'print("I am prasanth")');
 // console.log(users);
 // const submit = await getSubmissions();
