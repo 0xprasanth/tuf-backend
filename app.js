@@ -7,8 +7,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.json(['Hello from /'])
+
+app.get("/testing", (req, res) => {
+  res.json(['Hello from /testing'])
 })
 
 
@@ -16,7 +17,7 @@ app.get("/submission", async (req, res) => {
   // const users = await getUsers()
   /* supabase */
   const submissions = await getSubmissions();
-  console.log(submissions);
+  // console.log(submissions);
   res.send(submissions);
 });
 
@@ -52,6 +53,8 @@ app.use((err, req, res, next) => {
   res.status(500).send(`Something broke!`);
 });
 
-app.listen(8081, () => {
+const port = process.env.PORT || 8081
+
+app.listen(port, () => {
   console.log("Server running on port 8081");
 });
