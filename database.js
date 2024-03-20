@@ -37,8 +37,8 @@ export async function getSubmissionById(id){
     
 }
 
-const one = await getSubmissionById(2)
-console.log(one);
+// const one = await getSubmissionById(2)
+// console.log(one);
 
 
 
