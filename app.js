@@ -8,6 +8,10 @@ app.use(express.json());
 app.use(cors());
 
 
+app.get("/", (req, res) => {
+  res.json(['Hello from /'])
+})
+
 app.get("/testing", (req, res) => {
   res.json(['Hello from /testing'])
 })
